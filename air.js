@@ -6,8 +6,9 @@ $(document).ready(function () {
 function draw(){
     var c=document.getElementById("myCanvas");
     var ctx=c.getContext("2d");
- 
+ //Set the position for rhombus
     roundedRectArc(ctx,300, 300, 100, 100, 20);
+ //Set the position for drawing the line around rhombus
     linecapLessRecArc(ctx,300, 300, 100, 100, 20);
 }
 
@@ -41,7 +42,7 @@ function roundedRectArc(ctx,x,y,w,h,r){
     ctx.restore();
 
 }
-
+//Draw the line cap
 function linecapLessRecArc(ctx,x,y,w,h,r){
     y-=15;h+=30;x-=15;w+=30;r+=21.21-4;//r+=sqrt(15^2+15^2)
     var a = x + w/2;
@@ -265,7 +266,7 @@ function linecapLessRecArc(ctx,x,y,w,h,r){
         }, 25);
         
     }
-
+//Setting the time interval to draw the arcs
     function tickArc(currentArc,ArcType,frac){
         currentArc += PlusCurrentRadius;
         currentArcTemp=currentArc;
@@ -387,7 +388,7 @@ function linecapLessRecArc(ctx,x,y,w,h,r){
         }
         }, 25);
     }
-
+//Setting the time interval to draw the lines
     function tickLine(currentQuart,LineType,frac){
 
         currentQuart += PlusCurrentLine;
@@ -477,7 +478,7 @@ function linecapLessRecArc(ctx,x,y,w,h,r){
         ctx.arc(a, ytop+rsqr,r,5/4*Math.PI,5/4*Math.PI+(Ra8/r)*currentArc);
         
     }
-    
+   //Draw the quart lines 
     function LineQuarter(currentQuart,FractionLine){
 
         var Ral1=  FractionLine*Math.sqrt(Math.pow(movestopxf-movestopxs,2)+Math.pow(movestopyf-movestopyc,2))/LineLengthProportion;
